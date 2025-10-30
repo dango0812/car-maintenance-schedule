@@ -1,28 +1,44 @@
 {
-  "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "target": "ES2022",
-    "useDefineForClassFields": true,
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "types": ["vite/client"],
-    "skipLibCheck": true,
+    "compilerOptions": {
+        "incremental": true,
+        "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
 
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-    "jsx": "react-jsx",
+        "target": "ESNext", // ECMAScript 버전
+        "module": "ESNext", // 모듈 시스템
+        "lib": ["ESNext", "DOM", "DOM.Iterable"], // 사용할 라이브러리
+        "useDefineForClassFields": true, // 클래스 필드 선언을 표준 방식으로 처리
+        "skipLibCheck": true, // 타입 정의 파일 검사 건너뜀 (빌드 속도 향상)
+        "esModuleInterop": true, // CommonJS/ESM 간 호환 import 허용
 
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
-  },
-  "include": ["src"]
+        "moduleResolution": "bundler", // 번들러에 최적화된 모듈 해석 방식
+        "allowImportingTsExtensions": true, // .ts 확장자 import 허용
+        "verbatimModuleSyntax": true, // import/export 구문을 변환 없이 유지
+        "moduleDetection": "force", // 모든 파일을 모듈로 간주
+        "noEmit": true, // 결과 파일 생성 안 함 (Vite가 빌드 담당)
+        "jsx": "react-jsx", // React 17+ JSX 변환 방식 사용
+
+        "strict": true, // 모든 엄격한 타입 검사 활성화
+        "noUnusedLocals": true, // 사용하지 않는 지역 변수 에러
+        "noUnusedParameters": true, // 사용하지 않는 매개변수 에러
+        "erasableSyntaxOnly": true, // 지워질 수 있는 구문만 허용
+        "noFallthroughCasesInSwitch": true, // switch 문에서 fallthrough 방지
+        "noUncheckedSideEffectImports": true, // 부수 효과가 있는 import에 대한 검사
+
+        "paths": {
+            "src/*": ["./src/*"],
+            "constants/*": ["./src/constants/*"],
+            "components/*": ["./src/components/*"],
+            "common/*": ["./src/components/common/*"],
+            "base/*": ["./src/components/base/*"],
+            "pages/*": ["./src/pages/*"],
+            "hooks/*": ["./src/hooks/*"],
+            "utils/*": ["./src/utils/*"],
+            "assets/*": ["./src/assets/*"],
+            "apis/*": ["./src/apis/*"],
+            "stores/*": ["./src/stores/*"],
+            "styles/*": ["./src/styles/*"],
+            "models/*": ["./src/models/*"]
+        }
+    },
+    "include": ["src"]
 }
