@@ -15,18 +15,20 @@ export default function Router() {
                     <Outlet />
                 </Suspense>
             ),
-        },
-        {
-            path: paths.home,
-            element: <HomePage />,
-        },
-        {
-            path: paths.page404,
-            element: <NotFoundPage />,
-        },
-        {
-            path: '*',
-            element: <Navigate to={paths.page404} replace />,
+            children: [
+                {
+                    path: paths.home,
+                    element: <HomePage />,
+                },
+                {
+                    path: paths.page404,
+                    element: <NotFoundPage />,
+                },
+                {
+                    path: '*',
+                    element: <Navigate to={paths.page404} replace />,
+                },
+            ],
         },
     ]);
 }

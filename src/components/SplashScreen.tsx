@@ -1,3 +1,3 @@
-export default function SplashPage() {
-    return <h1>SplashPage</h1>;
+export default function SplashScreen() {
+    return <h1>SplashScreen</h1>;
 }
