@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+echo "[STARTED] 💡 Running eslint for staged files..."
+pnpm lint-staged
+echo "[COMPLETED] ✅ ESLint check completed."
