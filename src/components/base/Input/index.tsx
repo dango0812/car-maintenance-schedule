@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef, useId } from 'react';
 import clsx from 'clsx';
 
 import { sprinkles } from 'src/styles/sprinkles.css';
@@ -34,76 +34,80 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             ...rest
         },
         ref,
-    ) => (
-        <div
-            className={clsx(
-                styles.ContainerStyle({ fullWidth }),
-                sprinkles({
-                    display: 'flex',
-                    flexDirection: 'column',
-                }),
-            )}
-        >
-            {label && (
-                <label htmlFor={label} className={styles.LabelStyle({ size })}>
-                    {required && (
-                        <span className={styles.RequiredMarkStyle} aria-label="required">
-                            *
-                        </span>
-                    )}
-                    {label}
-                </label>
-            )}
-
+    ) => {
+        const inputId = useId();
+        return (
             <div
-                className={sprinkles({
-                    position: 'relative',
-                    display: 'flex',
-                    alignItems: 'center',
-                })}
+                className={clsx(
+                    styles.ContainerStyle({ fullWidth }),
+                    sprinkles({
+                        display: 'flex',
+                        flexDirection: 'column',
+                    }),
+                )}
             >
-                {startDecorator && (
-                    <span
-                        className={clsx(
-                            styles.StartDecoratorStyle({ disabled }),
-                            sprinkles({
-                                position: 'absolute',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                            }),
+                {label && (
+                    <label htmlFor={inputId} className={styles.LabelStyle({ size })}>
+                        {required && (
+                            <span className={styles.RequiredMarkStyle} aria-label="required">
+                                *
+                            </span>
                         )}
-                        aria-hidden="true"
-                    >
-                        {startDecorator}
-                    </span>
+                        {label}
+                    </label>
                 )}
 
-                <input
-                    ref={ref}
-                    disabled={disabled}
-                    required={required}
-                    aria-invalid={error}
-                    className={clsx(
-                        styles.InputStyle({
-                            variant,
-                            color,
-                            size,
-                            fullWidth,
-                            error,
-                            hasStartDecorator: Boolean(startDecorator),
-                        }),
-                        className,
+                <div
+                    className={sprinkles({
+                        position: 'relative',
+                        display: 'flex',
+                        alignItems: 'center',
+                    })}
+                >
+                    {startDecorator && (
+                        <span
+                            className={clsx(
+                                styles.StartDecoratorStyle({ disabled }),
+                                sprinkles({
+                                    position: 'absolute',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                }),
+                            )}
+                            aria-hidden="true"
+                        >
+                            {startDecorator}
+                        </span>
                     )}
-                    {...rest}
-                />
-            </div>
 
-            {helperText && (
-                <p className={styles.HelperTextStyle({ error, disabled })} role={error ? 'alert' : undefined}>
-                    {helperText}
-                </p>
-            )}
-        </div>
-    ),
+                    <input
+                        ref={ref}
+                        id={inputId}
+                        disabled={disabled}
+                        required={required}
+                        aria-invalid={error}
+                        className={clsx(
+                            styles.InputStyle({
+                                variant,
+                                color,
+                                size,
+                                fullWidth,
+                                error,
+                                hasStartDecorator: Boolean(startDecorator),
+                            }),
+                            className,
+                        )}
+                        {...rest}
+                    />
+                </div>
+
+                {helperText && (
+                    <p className={styles.HelperTextStyle({ error, disabled })} role={error ? 'alert' : undefined}>
+                        {helperText}
+                    </p>
+                )}
+            </div>
+        );
+    },
 );

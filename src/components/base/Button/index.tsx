@@ -79,7 +79,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                     </span>
                 )}
 
-                <p
+                <span
                     className={clsx(
                         ButtonTextStyle,
                         sprinkles({
@@ -104,7 +104,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                             startDecorator,
                         )}
                     {children}
-                </p>
+                </span>
             </button>
         );
     },
