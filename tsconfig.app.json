@@ -28,8 +28,6 @@
             "src/*": ["./src/*"],
             "constants/*": ["./src/constants/*"],
             "components/*": ["./src/components/*"],
-            "common/*": ["./src/components/common/*"],
-            "base/*": ["./src/components/base/*"],
             "pages/*": ["./src/pages/*"],
             "hooks/*": ["./src/hooks/*"],
             "utils/*": ["./src/utils/*"],
