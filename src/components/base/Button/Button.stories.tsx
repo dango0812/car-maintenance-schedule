@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Button, type ButtonProps } from 'components/base/Button';
 import { fn } from 'storybook/test';
+
+import { Button, type ButtonProps } from 'src/components/base/Button';
 
 const VARIANTS = ['solid', 'soft'] as const;
 const COLORS = ['black', 'grey', 'blue', 'orange', 'red', 'green'] as const;
@@ -36,10 +37,10 @@ const meta: Meta<ButtonProps> = {
         loading: false,
         onClick: fn(),
     },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<ButtonProps>;
 
 export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<ButtonProps>;
 
 export const Default: Story = {};
 

@@ -26,8 +26,13 @@
     ]
   },
   "dependencies": {
+    "@lukemorales/query-key-factory": "^1.3.4",
+    "@tanstack/react-query": "^5.90.12",
+    "axios": "^1.13.2",
     "clsx": "^2.1.1",
     "es-toolkit": "^1.41.0",
+    "lottie-react": "^2.4.1",
+    "overlay-kit": "^1.8.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.5"
@@ -41,6 +46,8 @@
     "@storybook/addon-vitest": "10.0.6",
     "@storybook/builder-vite": "^10.0.6",
     "@storybook/react-vite": "^10.0.6",
+    "@tanstack/eslint-plugin-query": "^5.91.2",
+    "@tanstack/react-query-devtools": "^5.91.1",
     "@types/eslint": "^9.6.1",
     "@types/node": "^24.6.0",
     "@types/react": "^19.1.16",
@@ -66,6 +73,7 @@
     "globals": "^16.4.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.6",
+    "msw": "^2.12.4",
     "playwright": "^1.56.1",
     "prettier": "^3.6.2",
     "storybook": "^10.0.6",
@@ -79,5 +87,10 @@
     "overrides": {
       "vite": "npm:rolldown-vite@7.1.14"
     }
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }

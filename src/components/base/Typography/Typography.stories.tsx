@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Typography, type TypographyProps } from 'components/base/Typography';
+
+import { Typography, type TypographyProps } from 'src/components/base/Typography';
 
 const TAGS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span', 'p', 'label', 'pre', 'del', 'ins', 'em'] as const;
 const VARIANTS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'title', 'body', 'caption'] as const;
@@ -41,10 +42,10 @@ const meta: Meta<TypographyProps> = {
         variant: 'title',
         children: '가나다라마바사아자차카타파하',
     },
-} satisfies Meta<typeof Typography>;
+} satisfies Meta<TypographyProps>;
 
 export default meta;
-type Story = StoryObj<typeof Typography>;
+type Story = StoryObj<TypographyProps>;
 
 export const Default: Story = {};
 

@@ -1,6 +1,6 @@
 import { createGlobalThemeContract } from '@vanilla-extract/css';
 
-import { colors } from 'styles/tokens/colors.css';
+import { colors } from 'src/styles/tokens/colors.css';
 
 export const shadow = {
     sm: `0 0 4px 0 ${colors.greenAlpha[100]}, 0 4px 16px 0 ${colors.greenAlpha[100]}`,

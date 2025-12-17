@@ -1,11 +1,12 @@
 import { globalStyle } from '@vanilla-extract/css';
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 
-import { breakpoints } from 'styles/breakpoints.css';
-import { fontContract } from 'styles/tokens/font.css';
-import { vars } from 'styles/vars.css';
+import { breakpoints } from 'src/styles/breakpoints.css';
+import { fontContract } from 'src/styles/tokens/font.css';
+import { vars } from 'src/styles/vars.css';
 
 globalStyle('body', {
+    color: vars.colors.black,
     fontFamily: fontContract.family,
     WebkitFontSmoothing: 'antialiased',
     MozOsxFontSmoothing: 'grayscale',
@@ -27,6 +28,15 @@ const typographyProperties = defineProperties({
     },
     defaultCondition: 'mobile',
     properties: {
+        color: {
+            white: vars.colors.white,
+            black: vars.colors.black,
+            grey: vars.colors.grey[700],
+            blue: vars.colors.blue[600],
+            orange: vars.colors.orange[600],
+            red: vars.colors.red[600],
+            green: vars.colors.green[600],
+        },
         fontSize: vars.font.size,
         fontWeight: vars.font.weight,
         lineHeight: vars.font.lineHeight,
@@ -34,53 +44,53 @@ const typographyProperties = defineProperties({
     },
 });
 
-export const sprinkles = createSprinkles(typographyProperties);
-export type TypographySprinkles = Parameters<typeof sprinkles>[0];
+export const typographySprinkles = createSprinkles(typographyProperties);
+export type TypographySprinkles = Parameters<typeof typographySprinkles>[0];
 
-export const variants = {
-    h1: sprinkles({
+export const variantStyle = {
+    h1: {
         fontSize: 's48',
         fontWeight: 'bold',
         lineHeight: 'lg',
-    }),
-    h2: sprinkles({
+    },
+    h2: {
         fontSize: 's44',
         fontWeight: 'bold',
         lineHeight: 'lg',
-    }),
-    h3: sprinkles({
+    },
+    h3: {
         fontSize: 's40',
         fontWeight: 'bold',
         lineHeight: 'lg',
-    }),
-    h4: sprinkles({
+    },
+    h4: {
         fontSize: 's36',
         fontWeight: 'bold',
         lineHeight: 'lg',
-    }),
-    h5: sprinkles({
+    },
+    h5: {
         fontSize: 's30',
         fontWeight: 'bold',
         lineHeight: 'md',
-    }),
-    h6: sprinkles({
+    },
+    h6: {
         fontSize: 's24',
         fontWeight: 'bold',
         lineHeight: 'md',
-    }),
-    title: sprinkles({
-        fontSize: 's20',
+    },
+    title: {
+        fontSize: 's18',
         fontWeight: 'regular',
         lineHeight: 'md',
-    }),
-    body: sprinkles({
+    },
+    body: {
         fontSize: 's16',
         fontWeight: 'regular',
-    }),
-    caption: sprinkles({
+    },
+    caption: {
         fontSize: 's14',
         fontWeight: 'regular',
-    }),
+    },
 } as const;
 
-export type TypographyVariant = keyof typeof variants;
+export type TypographyVariant = keyof typeof variantStyle;

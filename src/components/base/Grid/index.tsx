@@ -1,32 +1,35 @@
 import React from 'react';
-import { FlexBox } from 'components/base/FlexBox';
+import clsx from 'clsx';
+import { mapValues } from 'es-toolkit';
 
-import { sprinkles } from 'styles/sprinkles.css';
+import { type GridSprinkles, gridSprinkles } from 'src/styles/base/grid.css';
+import { sprinkles } from 'src/styles/sprinkles.css';
 
-interface GridProps {
+export interface GridProps {
     children: React.ReactNode;
     colGap?: string;
     rowGap?: string;
     colCount?: number;
 }
 
-interface GridItemProps {
+type SpanValue = number | Record<string, number>;
+
+interface GridItemProps extends Omit<GridSprinkles, 'span'> {
     children: React.ReactNode;
-    span?: number;
+    className?: string;
+    span: SpanValue;
 }
 
-const GridItem = ({ children, span = 1 }: GridItemProps) => {
-    return (
-        <FlexBox
-            justifyContent="center"
-            alignItems="center"
-            style={{
-                gridColumn: `span ${span}`,
-            }}
-        >
-            {children}
-        </FlexBox>
-    );
+const normalizeSpan = (value: SpanValue): GridSprinkles['span'] => {
+    if (typeof value === 'number') {
+        return `span ${value}` as GridSprinkles['span'];
+    }
+
+    return mapValues(value, (v) => `span ${v}`) as GridSprinkles['span'];
+};
+
+const GridItem = ({ children, className, span }: GridItemProps) => {
+    return <div className={clsx(gridSprinkles({ span: normalizeSpan(span) }), className)}>{children}</div>;
 };
 
 export const Grid = ({ children, colGap = '12px', rowGap = '12px', colCount = 12 }: GridProps) => {

@@ -3,6 +3,8 @@ interface IfProps {
     children: React.ReactNode;
 }
 
-export const If = ({ condition, children }: IfProps) => {
+const If = ({ condition, children }: IfProps) => {
     return condition ? children : null;
 };
+
+export default If;

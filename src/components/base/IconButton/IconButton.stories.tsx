@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { IconButton, type IconButtonProps } from 'components/base/IconButton';
 import { fn } from 'storybook/test';
+
+import { IconButton, type IconButtonProps } from 'src/components/base/IconButton';
 
 const VARIANTS = ['solid', 'soft', 'outlined'] as const;
 const COLORS = ['grey', 'blue', 'orange', 'red', 'green'] as const;
@@ -38,10 +39,10 @@ const meta: Meta<IconButtonProps> = {
         size: 'md',
         onClick: fn(),
     },
-} satisfies Meta<typeof IconButton>;
+} satisfies Meta<IconButtonProps>;
 
 export default meta;
-type Story = StoryObj<typeof IconButton>;
+type Story = StoryObj<IconButtonProps>;
 
 const SearchIcon = (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">

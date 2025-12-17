@@ -1,7 +1,7 @@
 import { globalStyle, style } from '@vanilla-extract/css';
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
-import { vars } from 'styles/vars.css';
+import { vars } from 'src/styles/vars.css';
 
 globalStyle('input[type=number]::-webkit-inner-spin-button', {
     WebkitAppearance: 'none',

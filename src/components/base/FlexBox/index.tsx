@@ -1,9 +1,9 @@
 import { forwardRef } from 'react';
 import clsx from 'clsx';
 
-import { sprinkles } from 'styles/sprinkles.css';
+import { sprinkles } from 'src/styles/sprinkles.css';
 
-interface FlexBoxProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface FlexBoxProps {
     className?: string;
     children: React.ReactNode;
     direction?: Parameters<typeof sprinkles>[0]['flexDirection'];
@@ -14,6 +14,7 @@ interface FlexBoxProps extends React.HTMLAttributes<HTMLDivElement> {
     flexGrow?: Parameters<typeof sprinkles>[0]['flexGrow'];
     flexShrink?: Parameters<typeof sprinkles>[0]['flexShrink'];
     flexBasis?: Parameters<typeof sprinkles>[0]['flexBasis'];
+    gap?: Parameters<typeof sprinkles>[0]['gap'];
     width?: string;
     height?: string;
 }
@@ -31,6 +32,7 @@ export const FlexBox = forwardRef<HTMLDivElement, FlexBoxProps>(
             flexGrow,
             flexShrink,
             flexBasis,
+            gap,
             width,
             height,
             ...rest
@@ -51,6 +53,7 @@ export const FlexBox = forwardRef<HTMLDivElement, FlexBoxProps>(
                         flexGrow,
                         flexShrink,
                         flexBasis,
+                        gap,
                     }),
                     className,
                 )}

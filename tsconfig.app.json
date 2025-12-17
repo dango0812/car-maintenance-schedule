@@ -25,17 +25,7 @@
         "noUncheckedSideEffectImports": true, // 부수 효과가 있는 import에 대한 검사
 
         "paths": {
-            "src/*": ["./src/*"],
-            "constants/*": ["./src/constants/*"],
-            "components/*": ["./src/components/*"],
-            "pages/*": ["./src/pages/*"],
-            "hooks/*": ["./src/hooks/*"],
-            "utils/*": ["./src/utils/*"],
-            "assets/*": ["./src/assets/*"],
-            "apis/*": ["./src/apis/*"],
-            "stores/*": ["./src/stores/*"],
-            "styles/*": ["./src/styles/*"],
-            "models/*": ["./src/models/*"]
+            "src/*": ["./src/*"]
         }
     },
     "include": ["src"]

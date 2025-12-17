@@ -1,6 +1,6 @@
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
-import { vars } from 'styles/vars.css';
+import { vars } from 'src/styles/vars.css';
 
 const CARD_VARIANTS = ['solid', 'soft', 'outlined'] as const;
 const CARD_COLORS = ['white', 'grey', 'blue', 'orange', 'red', 'green'] as const;

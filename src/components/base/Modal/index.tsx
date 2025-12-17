@@ -2,8 +2,8 @@ import { forwardRef, useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import ReactDOM from 'react-dom';
 
-import { ModalStyle, OverlayStyle } from 'styles/base/modal.css';
-import { sprinkles } from 'styles/sprinkles.css';
+import { ModalStyle, OverlayStyle } from 'src/styles/base/modal.css';
+import { sprinkles } from 'src/styles/sprinkles.css';
 
 export interface ModalProps {
     open: boolean;

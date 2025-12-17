@@ -1,7 +1,12 @@
 import { createElement } from 'react';
 import clsx from 'clsx';
 
-import { sprinkles, type TypographySprinkles, type TypographyVariant, variants } from 'styles/base/typography.css';
+import {
+    type TypographySprinkles,
+    typographySprinkles,
+    type TypographyVariant,
+    variantStyle,
+} from 'src/styles/base/typography.css';
 
 export type TypographyTag =
     | 'h1'
@@ -28,6 +33,7 @@ export const Typography = ({
     as = 'p',
     children,
     className,
+    color,
     fontSize,
     fontWeight,
     lineHeight,
@@ -35,14 +41,13 @@ export const Typography = ({
     variant,
     ...rest
 }: TypographyProps) => {
+    const baseStyle = variant ? typographySprinkles({ ...variantStyle[variant] }) : '';
+    const overrideStyle = typographySprinkles({ color, fontSize, fontWeight, lineHeight, whiteSpace });
+
     return createElement(
         as,
         {
-            className: clsx(
-                variant && variants[variant],
-                sprinkles({ fontSize, fontWeight, lineHeight, whiteSpace }),
-                className,
-            ),
+            className: clsx(baseStyle, overrideStyle, className),
             ...rest,
         },
         children,
