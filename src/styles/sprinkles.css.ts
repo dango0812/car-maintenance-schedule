@@ -1,5 +1,7 @@
 import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles';
 
+import { vars } from './vars.css';
+
 const layoutProperties = defineProperties({
     properties: {
         position: ['absolute', 'fixed', 'relative', 'static', 'sticky'],
@@ -14,6 +16,7 @@ const layoutProperties = defineProperties({
         flexBasis: ['auto', 'min-content', 'max-content', 'content', 'fit-content'],
         flexGrow: [0, 1],
         flexShrink: [0, 1],
+        gap: vars.gap,
         cursor: ['default', 'pointer', 'wait', 'not-allowed'],
     },
 });

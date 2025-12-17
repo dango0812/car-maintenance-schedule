@@ -23,16 +23,6 @@ export default defineConfig({
     resolve: {
         alias: {
             src: path.resolve(dirname, 'src'),
-            constants: path.resolve(dirname, 'src/constants'),
-            components: path.resolve(dirname, 'src/components'),
-            pages: path.resolve(dirname, 'src/pages'),
-            hooks: path.resolve(dirname, 'src/hooks'),
-            utils: path.resolve(dirname, 'src/utils'),
-            assets: path.resolve(dirname, 'src/assets'),
-            apis: path.resolve(dirname, 'src/apis'),
-            stores: path.resolve(dirname, 'src/stores'),
-            styles: path.resolve(dirname, 'src/styles'),
-            models: path.resolve(dirname, 'src/models'),
         },
     },
     test: {

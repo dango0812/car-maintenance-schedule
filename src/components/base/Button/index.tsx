@@ -1,11 +1,12 @@
 import { createElement, forwardRef } from 'react';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
-import CircleProgress from 'assets/circle-progress.svg?react';
 import clsx from 'clsx';
 
-import { ButtonStyle, ButtonTextStyle, type ButtonVariants, TextVisibleVar } from 'styles/base/button.css';
-import { sprinkles } from 'styles/sprinkles.css';
-import { vars } from 'styles/vars.css';
+import CircleProgress from 'src/assets/icons/circle-progress.svg?react';
+
+import { ButtonStyle, ButtonTextStyle, type ButtonVariants, TextVisibleVar } from 'src/styles/base/button.css';
+import { sprinkles } from 'src/styles/sprinkles.css';
+import { vars } from 'src/styles/vars.css';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;

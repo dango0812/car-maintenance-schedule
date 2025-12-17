@@ -1,9 +1,10 @@
 import { forwardRef, useCallback } from 'react';
 import clsx from 'clsx';
-import { Input, type InputProps } from 'components/base/Input';
 import { isNumber } from 'es-toolkit/compat';
 
-import * as styles from 'styles/base/input.css';
+import { Input, type InputProps } from 'src/components/base/Input';
+
+import * as styles from 'src/styles/base/input.css';
 
 export interface NumberInputProps extends Omit<InputProps, 'onChange' | 'type' | 'inputMode' | 'value'> {
     minNumber?: number;

@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Input, type InputProps } from 'components/base/Input';
 
-import { sprinkles } from 'styles/sprinkles.css';
-import { vars } from 'styles/vars.css';
+import { Input, type InputProps } from 'src/components/base/Input';
+
+import { sprinkles } from 'src/styles/sprinkles.css';
+import { vars } from 'src/styles/vars.css';
 
 const VARIANTS = ['outlined', 'solid'] as const;
 const COLORS = ['grey', 'blue', 'orange', 'red', 'green'] as const;
@@ -57,10 +58,10 @@ const meta: Meta<InputProps> = {
         disabled: false,
         fullWidth: false,
     },
-} satisfies Meta<typeof Input>;
+} satisfies Meta<InputProps>;
 
 export default meta;
-type Story = StoryObj<typeof Input>;
+type Story = StoryObj<InputProps>;
 
 export const Default: Story = {
     args: {

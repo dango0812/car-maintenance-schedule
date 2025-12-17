@@ -1,10 +1,10 @@
 import { forwardRef } from 'react';
 import clsx from 'clsx';
 
-import { IconButtonStyle, type IconButtonVariants } from 'styles/base/iconButton.css';
-import { sprinkles } from 'styles/sprinkles.css';
+import { IconButtonStyle, type IconButtonVariants } from 'src/styles/base/iconButton.css';
+import { sprinkles } from 'src/styles/sprinkles.css';
 
-export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IconButtonProps {
     children: React.ReactNode;
     className?: string;
     variant?: NonNullable<IconButtonVariants>['variant'];

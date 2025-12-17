@@ -1,12 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Card } from 'components/base/Card';
+
+import { Card, type CardProps } from 'src/components/base/Card';
 
 const VARIANTS = ['outlined', 'solid', 'soft'] as const;
 const COLORS = ['white', 'grey', 'blue', 'orange', 'red', 'green'] as const;
 const SIZES = ['sm', 'md', 'lg'] as const;
 const SHADOWS = ['sm', 'md', 'lg'] as const;
 
-const meta: Meta<typeof Card> = {
+const meta: Meta<CardProps> = {
     title: 'Components/Card',
     component: Card,
     tags: ['autodocs'],
@@ -35,10 +36,10 @@ const meta: Meta<typeof Card> = {
             options: SHADOWS,
         },
     },
-} satisfies Meta<typeof Card>;
+} satisfies Meta<CardProps>;
 export default meta;
 
-type Story = StoryObj<typeof Card>;
+type Story = StoryObj<CardProps>;
 
 export const Default: Story = {};
 

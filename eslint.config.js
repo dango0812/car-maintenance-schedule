@@ -5,18 +5,18 @@ import tseslint from 'typescript-eslint';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import prettier from 'eslint-config-prettier';
-
+import pluginQuery from '@tanstack/eslint-plugin-query';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
-import unusedImports from 'eslint-plugin-unused-imports';
+// import unusedImports from 'eslint-plugin-unused-imports';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 
 export default defineConfig(
     {
         ignores: ['dist', 'coverage', 'node_modules', 'build', '**.config.*', 'package.json', 'pnpm-lock.yaml'],
     },
-
     js.configs.recommended,
     ...tseslint.configs.recommended,
+    ...pluginQuery.configs['flat/recommended'],
     {
         files: ['**/*.{ts,tsx,js,jsx}'],
         languageOptions: {
@@ -35,7 +35,7 @@ export default defineConfig(
         },
         plugins: {
             'simple-import-sort': simpleImportSort,
-            'unused-imports': unusedImports,
+            // 'unused-imports': unusedImports,
             'react-hooks': reactHooks,
             'react-refresh': reactRefresh,
             'jsx-a11y': jsxA11y,
@@ -48,11 +48,11 @@ export default defineConfig(
             'no-unused-expressions': 'off',
             'no-duplicate-imports': 'error',
 
-            'unused-imports/no-unused-imports': 'error',
-            'unused-imports/no-unused-vars': [
-                'error',
-                { args: 'after-used', argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
-            ],
+            // 'unused-imports/no-unused-imports': 'error',
+            // 'unused-imports/no-unused-vars': [
+            //     'error',
+            //     { args: 'after-used', argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+            // ],
 
             'simple-import-sort/imports': [
                 'error',

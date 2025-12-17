@@ -1,6 +1,6 @@
 import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 
-import { vars } from 'styles/vars.css';
+import { vars } from 'src/styles/vars.css';
 
 const ICON_BUTTON_VARIANTS = ['solid', 'soft', 'outlined'] as const;
 const ICON_BUTTON_COLORS = ['grey', 'blue', 'orange', 'red', 'green'] as const;
@@ -8,8 +8,8 @@ const ICON_BUTTON_COLORS = ['grey', 'blue', 'orange', 'red', 'green'] as const;
 const getColorTokens = (color: (typeof ICON_BUTTON_COLORS)[number], variant: (typeof ICON_BUTTON_VARIANTS)[number]) => {
     if (variant === 'solid') {
         return {
-            base: vars.colors[`${color}Alpha`][200],
-            hover: vars.colors[color][100],
+            hover: vars.colors[`${color}Alpha`][300],
+            base: vars.colors[color][100],
         };
     }
 

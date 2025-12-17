@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { NumberInput, type NumberInputProps } from 'components/base/NumberInput';
+
+import { NumberInput, type NumberInputProps } from 'src/components/base/NumberInput';
 
 const VARIANTS = ['outlined', 'solid'] as const;
 const COLORS = ['grey', 'blue', 'orange', 'red', 'green'] as const;
@@ -61,10 +62,10 @@ const meta: Meta<NumberInputProps> = {
         },
     },
     args: {},
-} satisfies Meta<typeof NumberInput>;
+} satisfies Meta<NumberInputProps>;
 
 export default meta;
-type Story = StoryObj<typeof NumberInput>;
+type Story = StoryObj<NumberInputProps>;
 
 export const Default: Story = {
     render: (args) => {

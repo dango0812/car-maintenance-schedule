@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { FlexBox } from 'components/base/FlexBox';
 
-import { vars } from 'styles/vars.css';
+import { FlexBox, type FlexBoxProps } from 'src/components/base/FlexBox';
+
+import { vars } from 'src/styles/vars.css';
 
 const DIRECTIONS = ['row', 'column', 'row-reverse', 'column-reverse'] as const;
 const JUSTIFY_CONTENTS = [
@@ -16,7 +17,7 @@ const JUSTIFY_CONTENTS = [
 const ALIGN_ITEMS = ['normal', 'stretch', 'flex-start', 'flex-end', 'center', 'baseline'] as const;
 const WRAPS = ['nowrap', 'wrap', 'wrap-reverse'] as const;
 
-const meta: Meta<typeof FlexBox> = {
+const meta: Meta<FlexBoxProps> = {
     title: 'Components/FlexBox',
     component: FlexBox,
     tags: ['autodocs'],
@@ -58,10 +59,10 @@ const meta: Meta<typeof FlexBox> = {
         justifyContent: 'flex-start',
         alignItems: 'stretch',
     },
-} satisfies Meta<typeof FlexBox>;
+} satisfies Meta<FlexBoxProps>;
 export default meta;
 
-type Story = StoryObj<typeof FlexBox>;
+type Story = StoryObj<FlexBoxProps>;
 
 const DemoBox = ({ children }: { children: React.ReactNode }) => {
     return (

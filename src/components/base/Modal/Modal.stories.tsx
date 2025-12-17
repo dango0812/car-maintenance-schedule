@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Modal, type ModalProps } from 'components/base/Modal';
+
+import { Modal, type ModalProps } from 'src/components/base/Modal';
 
 const meta: Meta<ModalProps> = {
     title: 'Components/Modal',
@@ -23,10 +24,10 @@ const meta: Meta<ModalProps> = {
             action: 'closed',
         },
     },
-} satisfies Meta<typeof Modal>;
+} satisfies Meta<ModalProps>;
 
 export default meta;
-type Story = StoryObj<typeof Modal>;
+type Story = StoryObj<ModalProps>;
 
 export const Default: Story = {
     args: {

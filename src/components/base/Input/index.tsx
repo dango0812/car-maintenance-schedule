@@ -1,9 +1,9 @@
 import { forwardRef, useId } from 'react';
 import clsx from 'clsx';
 
+import * as styles from 'src/styles/base/input.css';
+import { type InputVariants } from 'src/styles/base/input.css';
 import { sprinkles } from 'src/styles/sprinkles.css';
-import * as styles from 'styles/base/input.css';
-import { type InputVariants } from 'styles/base/input.css';
 
 export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
     variant?: NonNullable<InputVariants>['variant'];

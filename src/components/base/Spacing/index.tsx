@@ -1,4 +1,4 @@
-interface SpacingProps {
+export interface SpacingProps {
     height: string;
 }
 

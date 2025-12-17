@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Grid } from 'components/base/Grid';
 
-import { sprinkles } from 'styles/sprinkles.css';
-import { vars } from 'styles/vars.css';
+import { Grid, type GridProps } from 'src/components/base/Grid';
 
-const meta = {
+import { sprinkles } from 'src/styles/sprinkles.css';
+import { vars } from 'src/styles/vars.css';
+
+const meta: Meta<GridProps> = {
     title: 'Components/Grid',
     component: Grid,
     tags: ['autodocs'],
@@ -17,10 +18,10 @@ const meta = {
     args: {
         colCount: 6,
     },
-} satisfies Meta<typeof Grid>;
+} satisfies Meta<GridProps>;
 
 export default meta;
-type Story = StoryObj<typeof Grid>;
+type Story = StoryObj<GridProps>;
 
 const Box = ({ children }: { children: React.ReactNode }) => (
     <div

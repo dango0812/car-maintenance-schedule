@@ -1,10 +1,10 @@
 import { forwardRef } from 'react';
 import clsx from 'clsx';
 
-import { CardStyle, type CardVariants } from 'styles/base/card.css';
-import { sprinkles } from 'styles/sprinkles.css';
+import { CardStyle, type CardVariants } from 'src/styles/base/card.css';
+import { sprinkles } from 'src/styles/sprinkles.css';
 
-export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface CardProps {
     children: React.ReactNode;
     className?: string;
     variant?: NonNullable<CardVariants>['variant'];
@@ -14,7 +14,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const Card = forwardRef<HTMLDivElement, CardProps>(
-    ({ children, className, variant = 'solid', color = 'white', size = 'md', shadow = 'md', ...rest }, ref) => (
+    ({ children, className, variant, color, size, shadow, ...rest }, ref) => (
         <div
             ref={ref}
             className={clsx(

@@ -4,7 +4,7 @@ export const colors = {
     scrollbarColor: 'rgba(0, 29, 58, 0.18)',
     transparent: 'transparent',
     white: '#ffffff',
-    black: '#000000',
+    black: '#222222',
     whiteAlpha: {
         50: 'rgba(255,255,255,0.05)',
         100: 'rgba(255,255,255,0.1)',
