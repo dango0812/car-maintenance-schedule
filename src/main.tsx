@@ -1,19 +1,21 @@
 import { StrictMode } from 'react';
-import { OverlayProvider } from 'overlay-kit';
 import ReactDOM from 'react-dom/client';
 
-import { setupMockServer } from 'src/mocks/setupMockServer';
-
-import App from './App';
+import App from '~/app';
+// import { enableMocking } from '~/app/msw';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
-
-setupMockServer().then(() => {
+root.render(
+    <StrictMode>
+        <App />
+    </StrictMode>,
+);
+/*
+enableMocking().then(() => {
     root.render(
         <StrictMode>
-            <OverlayProvider>
-                <App />
-            </OverlayProvider>
+            <App />
         </StrictMode>,
     );
 });
+*/

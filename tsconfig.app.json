@@ -25,8 +25,8 @@
         "noUncheckedSideEffectImports": true, // 부수 효과가 있는 import에 대한 검사
 
         "paths": {
-            "src/*": ["./src/*"]
+            "~/*": ["./src/*"]
         }
     },
-    "include": ["src"]
+    "include": ["src", "index.tsx"]
 }
