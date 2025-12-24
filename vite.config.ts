@@ -22,7 +22,7 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            src: path.resolve(dirname, 'src'),
+            '~': path.resolve(dirname, 'src'),
         },
     },
     test: {
