@@ -30,14 +30,3 @@ export const WrapperStyle = style({
     margin: 'auto',
     padding: vars.padding.p20,
 });
-
-export const Divider = style({
-    margin: `${vars.margin.m0} ${vars.margin.m4}`,
-    color: vars.colors.grey[700],
-    fontWeight: vars.font.weight.light,
-    selectors: {
-        '&::before': {
-            content: '"l"',
-        },
-    },
-});

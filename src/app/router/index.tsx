@@ -16,9 +16,11 @@ const router = createBrowserRouter([
         errorElement: <ErrorBoundary />,
         element: <Outlet />,
         children: [
-            {
-                children: [homeRoute, signInRoute, signUpRoute, dashboardRoute, page404Route],
-            },
+            homeRoute,
+            signInRoute,
+            signUpRoute,
+            dashboardRoute,
+            page404Route,
             {
                 path: '*',
                 loader: async () => redirect(paths.page404),
