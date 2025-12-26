@@ -22,7 +22,7 @@ export default function Layout({ children }: LayoutProps) {
                     <Spacing height="10px" />
 
                     <FlexBox direction="column" justifyContent="center">
-                        <Typography fontSize="s14" fontWeight="semiBold" color="grey">
+                        <Typography fontSize="s14" fontWeight="bold" color="grey">
                             현재 주행거리
                         </Typography>
                         <FlexBox alignItems="flex-end" gap="g10">

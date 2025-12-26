@@ -1,7 +1,6 @@
 import { createGlobalThemeContract } from '@vanilla-extract/css';
 
 export const font = {
-    family: 'Spoqa Han Sans Neo, -apple-system, BlinkMacSystemFont, system-ui, Roboto, Helvetica Neue, Segoe UI, Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, sans-serif',
     size: {
         s12: '0.75rem',
         s14: '0.875rem',
@@ -17,12 +16,15 @@ export const font = {
         s48: '3rem',
     },
     weight: {
+        /**
+         * thin = 100
+         */
         thin: '100',
-        extraLight: '200',
+        // extraLight: '200',
         light: '300',
         regular: '400',
         medium: '500',
-        semiBold: '600',
+        // semiBold: '600',
         bold: '700',
     },
     letterSpacing: {

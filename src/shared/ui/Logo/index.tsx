@@ -44,7 +44,7 @@ const LogoComponent = () => {
 const Logo = ({ enabledClick = true, path = paths.home, ...rest }: LogoProps) => {
     if (enabledClick) {
         return (
-            <Link className={styles.LinkStyle} to={path} {...rest}>
+            <Link to={path} {...rest}>
                 <LogoComponent />
             </Link>
         );

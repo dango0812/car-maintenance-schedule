@@ -72,7 +72,7 @@ const DemoBox = ({ children }: { children: React.ReactNode }) => {
                 padding: vars.padding.p20,
                 borderRadius: vars.radius.md,
                 color: vars.colors.green[600],
-                fontWeight: vars.font.weight.semiBold,
+                fontWeight: vars.font.weight.bold,
                 fontSize: vars.font.size.s14,
                 lineHeight: vars.font.lineHeight.md,
             }}
