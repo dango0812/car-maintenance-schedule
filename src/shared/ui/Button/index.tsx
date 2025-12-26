@@ -7,7 +7,7 @@ import { sprinkles } from '~/shared/styles/sprinkles.css';
 import { vars } from '~/shared/styles/vars.css';
 
 import CircleProgress from '~/shared/assets/icons/circle-progress.svg?react';
-import { If } from '~/shared/lib/If';
+import { If } from '~/shared/ui/If';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     /** 내부에 표시될 콘텐츠 */

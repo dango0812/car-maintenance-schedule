@@ -8,7 +8,13 @@ export interface ContainerProps {
     children: React.ReactNode;
     /** 추가 스타일 클래스 */
     className?: string;
-    /** 사이즈 "sm" | "md" | "lg" | "xl" */
+    /**
+     * 사이즈 |
+     * sm : 600px |
+     * md : 900px |
+     * lg : 1200px |
+     * xl : 1536px
+     */
     size?: NonNullable<ContainerVariants>['size'];
     /** 너비 100% 채울지 여부 */
     fullWidth?: NonNullable<ContainerVariants>['fullWidth'];

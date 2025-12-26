@@ -1,8 +1,10 @@
 import { createBrowserRouter, Outlet, redirect, RouterProvider } from 'react-router-dom';
 
-import { DashboardRoute } from '~/pages/dashboard/route';
-import { HomeRoute } from '~/pages/home/route';
+import { dashboardRoute } from '~/pages/dashboard/route';
+import { homeRoute } from '~/pages/home/route';
 import { page404Route } from '~/pages/page404/route';
+import { signInRoute } from '~/pages/sign-in/route';
+import { signUpRoute } from '~/pages/sign-up/route';
 import { paths } from '~/shared/routes';
 
 function ErrorBoundary() {
@@ -12,17 +14,13 @@ function ErrorBoundary() {
 const router = createBrowserRouter([
     {
         errorElement: <ErrorBoundary />,
+        element: <Outlet />,
         children: [
             {
-                children: [HomeRoute, DashboardRoute],
-            },
-            {
-                element: <Outlet />,
-                children: [page404Route],
+                children: [homeRoute, signInRoute, signUpRoute, dashboardRoute, page404Route],
             },
             {
                 path: '*',
-
                 loader: async () => redirect(paths.page404),
             },
         ],

@@ -131,7 +131,7 @@ export const ButtonStyle = recipe({
 export const ButtonTextStyle = style({
     gap: vars.gap.g8,
     fontSize: 'inherit',
-    fontWeight: vars.font.weight.semiBold,
+    fontWeight: vars.font.weight.bold,
     lineHeight: vars.font.lineHeight.md,
     letterSpacing: vars.font.letterSpacing.md,
     visibility: TextVisibleVar,

@@ -18,6 +18,10 @@ globalStyle('article, aside, details, figcaption, figure, footer, header, hgroup
     display: 'block',
 });
 
+globalStyle('a', {
+    textDecoration: 'none',
+});
+
 globalStyle('ol, ul', {
     listStyle: 'none',
 });

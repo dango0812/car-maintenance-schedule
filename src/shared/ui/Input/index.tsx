@@ -5,7 +5,7 @@ import * as styles from '~/shared/styles/base/input.css';
 import { type InputVariants } from '~/shared/styles/base/input.css';
 import { sprinkles } from '~/shared/styles/sprinkles.css';
 
-import { If } from '~/shared/lib/If';
+import { If } from '~/shared/ui/If';
 
 export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
     /** 스타일 "solid" | "outlined"*/

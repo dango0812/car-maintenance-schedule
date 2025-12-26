@@ -88,7 +88,7 @@ export const Colors: Story = {
                             margin: `0 0 ${vars.margin.m8} 0`,
                             fontSize: vars.font.size.s12,
                             color: '#666',
-                            fontWeight: vars.font.weight.semiBold,
+                            fontWeight: vars.font.weight.bold,
                             textTransform: 'capitalize',
                         }}
                     >

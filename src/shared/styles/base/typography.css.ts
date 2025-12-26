@@ -7,7 +7,8 @@ import { vars } from '../vars.css';
 
 globalStyle('body', {
     color: vars.colors.black,
-    fontFamily: fontContract.family,
+    fontFamily:
+        'Spoqa Han Sans Neo, -apple-system, BlinkMacSystemFont, system-ui, Roboto, Helvetica Neue, Segoe UI, Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, sans-serif',
     WebkitFontSmoothing: 'antialiased',
     MozOsxFontSmoothing: 'grayscale',
     wordBreak: 'keep-all',
