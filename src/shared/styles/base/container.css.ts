@@ -3,7 +3,7 @@ import { recipe, type RecipeVariants } from '@vanilla-extract/recipes';
 import { breakpoints } from '../breakpoints.css';
 import { vars } from '../vars.css';
 
-export const containerStyle = recipe({
+export const ContainerStyle = recipe({
     base: {
         width: '100%',
         margin: `${vars.margin.m0} auto`,
@@ -42,4 +42,4 @@ export const containerStyle = recipe({
     },
 });
 
-export type ContainerVariants = RecipeVariants<typeof containerStyle>;
+export type ContainerVariants = RecipeVariants<typeof ContainerStyle>;

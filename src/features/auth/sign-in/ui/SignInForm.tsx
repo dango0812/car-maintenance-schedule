@@ -1,10 +1,13 @@
+import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import * as Yup from 'yup';
 
 import { type SignInFormType } from '../model/useSignIn';
 
 import * as styles from './style.css';
 
+import { emailSchema, passwordSchema } from '~/shared/lib/auth/yupSchema';
 import { paths } from '~/shared/routes';
 import { Button } from '~/shared/ui/Button';
 import { FlexBox } from '~/shared/ui/FlexBox';
@@ -13,13 +16,19 @@ import { FormProvider, RHFInput } from '~/shared/ui/RHF';
 import { Spacing } from '~/shared/ui/Spacing';
 import { Typography } from '~/shared/ui/Typography';
 
-interface Props {
+interface SignInFormProps {
     onSubmit: (data: SignInFormType) => void;
     errorMessage: string | null;
 }
 
-export function SignInForm({ onSubmit, errorMessage }: Props) {
+export function SignInForm({ onSubmit, errorMessage }: SignInFormProps) {
+    const formSchema = Yup.object().shape({
+        email: emailSchema,
+        password: passwordSchema,
+    });
+
     const methods = useForm<SignInFormType>({
+        resolver: yupResolver(formSchema),
         defaultValues: { email: '', password: '' },
     });
 

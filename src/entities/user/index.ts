@@ -1,4 +1,4 @@
 export * from './api/auth';
 export { getAuthErrorMessage } from './lib/getAuthErrorMessage';
-export * from './model/useUserStore';
-export { useUserStore } from './model/useUserStore';
+export * from './model/userStore';
+export { useUserStore } from './model/userStore';

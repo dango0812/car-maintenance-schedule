@@ -53,6 +53,12 @@ export const IconButtonStyle = recipe({
             },
         },
         color: {
+            black: {
+                color: vars.colors.black,
+            },
+            white: {
+                color: vars.colors.white,
+            },
             grey: {
                 color: vars.colors.grey[500],
             },
