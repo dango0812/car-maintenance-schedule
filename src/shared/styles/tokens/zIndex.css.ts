@@ -13,6 +13,7 @@ export const zIndex = {
     z90: '90',
     z100: '100',
     modalOverlay: '1100',
+    toast: '1200',
 } as const;
 
 export const zIndexContract = createGlobalThemeContract(zIndex, (_, path) => {

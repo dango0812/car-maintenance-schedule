@@ -14,6 +14,13 @@ export const signUp = async (email: string, password: string) => {
     });
 };
 
+export const resendSignUpEmail = async (email: string) => {
+    return supabase.auth.resend({
+        type: 'signup',
+        email,
+    });
+};
+
 export const signOut = async () => {
     return supabase.auth.signOut();
 };

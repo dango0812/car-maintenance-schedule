@@ -25,7 +25,7 @@ export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEl
  * @param children - 내부에 표시될 콘텐츠
  * @param className - 추가 스타일 클래스
  * @param variant - "solid" | "soft"
- * @param color - "black" | "blue" | "green" | "grey" | "orange" | "red"
+ * @param color - "black" | "white" | "blue" | "green" | "grey" | "orange" | "red"
  * @param size - "sm" | "md" | "lg"
  * @param fullWidth - 100% 채울지 여부
  * @param loading - 로딩 상태 여부 (true일 경우 클릭이 방지되고, 스피너 표시)

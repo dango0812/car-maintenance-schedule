@@ -8,7 +8,7 @@ const lottieAssets = import.meta.glob('/src/shared/assets/lotties/*.json', {
     eager: true,
 }) as Record<string, LottieDataModule>;
 
-interface LottieAssetProps extends LottieOptions {
+interface LottieAssetProps extends Omit<LottieOptions, 'animationData'> {
     /** Lottie 파일명 (`/src/shared/assets/lotties/` 경로의 Lottie 파일을 로드합니다.) */
     name: string;
 }
@@ -39,9 +39,11 @@ export function LottieAsset({ name, width, height, className, style, ...rest }: 
         <Lottie
             {...rest}
             animationData={animationData}
-            width={width}
-            height={height}
-            style={style}
+            style={{
+                width,
+                height,
+                ...style,
+            }}
             className={className}
         />
     );

@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import { containerStyle, type ContainerVariants } from '~/shared/styles/base/container.css';
+import { ContainerStyle, type ContainerVariants } from '~/shared/styles/base/container.css';
 import { sprinkles } from '~/shared/styles/sprinkles.css';
 
 export interface ContainerProps {
@@ -36,7 +36,7 @@ export function Container({ children, className, size, fullWidth, style }: Conta
     return (
         <div
             className={clsx(
-                containerStyle({ size, fullWidth }),
+                ContainerStyle({ size, fullWidth }),
                 sprinkles({
                     display: 'flex',
                     flexDirection: 'row',
