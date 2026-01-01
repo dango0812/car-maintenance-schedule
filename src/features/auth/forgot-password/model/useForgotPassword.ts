@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 
 import { getAuthErrorMessage, resetPassword } from '~/entities/user';
+import { paths } from '~/shared/constants/paths';
 import { useToast } from '~/shared/hooks/useToast';
 
 export interface ForgotPasswordFormType {
@@ -15,7 +16,8 @@ export function useForgotPassword() {
         setErrorMessage(null);
 
         try {
-            const { error } = await resetPassword(data.email);
+            const redirectUrl = `${window.location.origin}${paths.resetPassword}`;
+            const { error } = await resetPassword(data.email, redirectUrl);
             if (error) {
                 setErrorMessage(getAuthErrorMessage(error));
                 return;

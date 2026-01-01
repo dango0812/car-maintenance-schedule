@@ -24,9 +24,9 @@ export const resendSignUpEmail = (email: string) => {
     });
 };
 
-export const resetPassword = (email: string) => {
+export const resetPassword = (email: string, redirectTo: string) => {
     return supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: `${window.location.origin}${paths.resetPassword}`,
+        redirectTo,
     });
 };
 
