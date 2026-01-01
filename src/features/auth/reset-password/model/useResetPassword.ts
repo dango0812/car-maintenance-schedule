@@ -14,27 +14,30 @@ export function useResetPassword() {
     const { success } = useToast();
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-    const handleResetPassword = useCallback(async (data: ResetPasswordFormType) => {
-        setErrorMessage(null);
+    const handleResetPassword = useCallback(
+        async (data: ResetPasswordFormType) => {
+            setErrorMessage(null);
 
-        try {
-            const { error } = await updateUser({
-                password: data.newPassword,
-            });
+            try {
+                const { error } = await updateUser({
+                    password: data.newPassword,
+                });
 
-            if (error) {
-                setErrorMessage(getAuthErrorMessage(error));
-                return;
+                if (error) {
+                    setErrorMessage(getAuthErrorMessage(error));
+                    return;
+                }
+
+                success('계정 비밀번호가 바뀌었어요.');
+                navigate(paths.dashboard);
+            } catch (error) {
+                if (error instanceof Error) {
+                    setErrorMessage(error.message);
+                }
             }
-
-            success('계정 비밀번호가 바뀌었어요.');
-            navigate(paths.dashboard);
-        } catch (error) {
-            if (error instanceof Error) {
-                setErrorMessage(error.message);
-            }
-        }
-    }, []);
+        },
+        [navigate, success],
+    );
 
     return {
         errorMessage,
