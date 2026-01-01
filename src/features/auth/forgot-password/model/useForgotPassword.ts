@@ -12,24 +12,27 @@ export function useForgotPassword() {
     const { success } = useToast();
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-    const handleForgotPassword = useCallback(async (data: ForgotPasswordFormType) => {
-        setErrorMessage(null);
+    const handleForgotPassword = useCallback(
+        async (data: ForgotPasswordFormType) => {
+            setErrorMessage(null);
 
-        try {
-            const redirectUrl = `${window.location.origin}${paths.resetPassword}`;
-            const { error } = await resetPassword(data.email, redirectUrl);
-            if (error) {
-                setErrorMessage(getAuthErrorMessage(error));
-                return;
-            }
+            try {
+                const redirectUrl = `${window.location.origin}${paths.resetPassword}`;
+                const { error } = await resetPassword(data.email, redirectUrl);
+                if (error) {
+                    setErrorMessage(getAuthErrorMessage(error));
+                    return;
+                }
 
-            success('비밀번호 재설정 메일을 보냈어요.\n메일함을 확인해 주세요.');
-        } catch (error) {
-            if (error instanceof Error) {
-                setErrorMessage(error.message);
+                success('비밀번호 재설정 메일을 보냈어요.\n메일함을 확인해 주세요.');
+            } catch (error) {
+                if (error instanceof Error) {
+                    setErrorMessage(error.message);
+                }
             }
-        }
-    }, []);
+        },
+        [success],
+    );
 
     return {
         errorMessage,
