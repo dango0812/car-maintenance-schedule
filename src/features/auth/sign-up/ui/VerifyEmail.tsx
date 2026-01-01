@@ -3,9 +3,9 @@ import { debounce } from 'es-toolkit';
 import { useNavigate } from 'react-router-dom';
 
 import { getAuthErrorMessage, resendSignUpEmail, useUserStore } from '~/entities/user';
+import { paths } from '~/shared/constants/paths';
 import { useToast } from '~/shared/hooks/useToast';
 import { supabase } from '~/shared/lib/supabaseClient';
-import { paths } from '~/shared/routes';
 import Asset from '~/shared/ui/Asset';
 import { Button } from '~/shared/ui/Button';
 import { FlexBox } from '~/shared/ui/FlexBox';

@@ -1,7 +1,7 @@
 import { type RouteObject } from 'react-router-dom';
 
+import { paths } from '~/shared/constants/paths';
 import { guestOnly } from '~/shared/lib/auth/authGuard';
-import { paths } from '~/shared/routes';
 
 export const signUpRoute: RouteObject = {
     path: paths.signUp,

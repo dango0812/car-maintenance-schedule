@@ -1,7 +1,7 @@
 import { redirect } from 'react-router-dom';
 
+import { paths } from '~/shared/constants/paths';
 import { supabase } from '~/shared/lib/supabaseClient';
-import { paths } from '~/shared/routes';
 
 /**
  * 로그인한 사용자만 접근 가능 (세션 존재하지 않을 경우, 로그인 페이지 이동)
