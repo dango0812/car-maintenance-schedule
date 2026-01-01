@@ -7,8 +7,8 @@ import { type SignInFormType } from '../model/useSignIn';
 
 import * as styles from './style.css';
 
+import { paths } from '~/shared/constants/paths';
 import { emailSchema, passwordSchema } from '~/shared/lib/auth/yupSchema';
-import { paths } from '~/shared/routes';
 import { Button } from '~/shared/ui/Button';
 import { FlexBox } from '~/shared/ui/FlexBox';
 import { If } from '~/shared/ui/If';
@@ -60,7 +60,7 @@ export function SignInForm({ onSubmit, errorMessage }: SignInFormProps) {
                 </Link>
                 <span className={styles.Divider} aria-hidden />
 
-                <Link to="#">
+                <Link to={paths.forgotPassword}>
                     <Typography variant="caption" color="grey" fontWeight="light">
                         비밀번호 찾기
                     </Typography>

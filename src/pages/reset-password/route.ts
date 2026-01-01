@@ -1,11 +1,11 @@
 import { type RouteObject } from 'react-router-dom';
 
 import { paths } from '~/shared/constants/paths';
-import { guestOnly } from '~/shared/lib/auth/authGuard';
+import { requireAuth } from '~/shared/lib/auth/authGuard';
 
-export const signInRoute: RouteObject = {
-    path: paths.signIn,
-    loader: guestOnly(),
+export const resetPasswordRoute: RouteObject = {
+    path: paths.resetPassword,
+    loader: requireAuth(),
     lazy: async () => {
         const Component = await import('./render').then((module) => module.default);
         return { Component };

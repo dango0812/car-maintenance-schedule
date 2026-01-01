@@ -1,6 +1,6 @@
 import { type RouteObject } from 'react-router-dom';
 
-import { paths } from '~/shared/routes';
+import { paths } from '~/shared/constants/paths';
 
 export const page404Route: RouteObject = {
     path: paths.page404,

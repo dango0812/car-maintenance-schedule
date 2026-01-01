@@ -1,5 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
-import { debounce } from 'es-toolkit';
+import { useCallback, useState } from 'react';
 
 import { getAuthErrorMessage, signIn } from '~/entities/user';
 
@@ -11,25 +10,20 @@ export interface SignInFormType {
 export function useSignIn() {
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-    const handleSignIn = useMemo(
-        () =>
-            debounce(async (data: SignInFormType) => {
-                setErrorMessage(null);
+    const handleSignIn = useCallback(async (data: SignInFormType) => {
+        setErrorMessage(null);
 
-                const { error } = await signIn(data.email, data.password);
-
-                if (error) {
-                    setErrorMessage(getAuthErrorMessage(error));
-                }
-            }, 1000),
-        [],
-    );
-
-    useEffect(() => {
-        return () => {
-            handleSignIn.cancel?.();
-        };
-    }, [handleSignIn]);
+        try {
+            const { error } = await signIn(data.email, data.password);
+            if (error) {
+                setErrorMessage(getAuthErrorMessage(error));
+            }
+        } catch (error) {
+            if (error instanceof Error) {
+                setErrorMessage(error.message);
+            }
+        }
+    }, []);
 
     return {
         errorMessage,

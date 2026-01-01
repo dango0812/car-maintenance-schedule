@@ -11,7 +11,7 @@ export const getAuthErrorMessage = (error: AuthError): string => {
         case 'invalid_credentials':
             return '이메일이나 비밀번호가 올바르지 않아요. 다시 확인해 주세요.';
         case 'email_not_confirmed':
-            return '이메일 인증이 완료되지 않았어요. 메일함을 확인해 주세요.';
+            return '메일 확인이 완료되지 않았어요. 메일함을 확인해 주세요.';
 
         // 유효성 검사 실패
         case 'validation_failed':
@@ -23,6 +23,9 @@ export const getAuthErrorMessage = (error: AuthError): string => {
             return '이미 가입된 이메일이에요. 다른 이메일을 써주세요.';
         case 'weak_password':
             return '비밀번호가 보안에 취약해요. 더 안전한 비밀번호를 입력해 주세요.';
+
+        case 'same_password':
+            return '이전 비밀번호와 같은 비밀번호로는 변경할 수 없어요.';
 
         case 'over_email_send_rate_limit':
             return '잠시 후 다시 시도해 주세요.';

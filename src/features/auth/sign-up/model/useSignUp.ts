@@ -18,19 +18,25 @@ export function useSignUp() {
     const handleSignUp = useCallback(async (data: SignUpFormType) => {
         setErrorMessage(null);
 
-        const { data: result, error } = await signUp(data.email, data.password);
+        try {
+            const { data: result, error } = await signUp(data.email, data.password);
 
-        if (error) {
-            setErrorMessage(getAuthErrorMessage(error));
-            return;
-        }
+            if (error) {
+                setErrorMessage(getAuthErrorMessage(error));
+                return;
+            }
 
-        const user = result?.user;
-        const isEmailVerified = user?.email_confirmed_at;
-        if (!isEmailVerified) {
-            setEmail(data.email);
-            setStep('verify');
-            return;
+            const user = result?.user;
+            const isEmailVerified = user?.email_confirmed_at;
+            if (!isEmailVerified) {
+                setEmail(data.email);
+                setStep('verify');
+                return;
+            }
+        } catch (error) {
+            if (error instanceof Error) {
+                setErrorMessage(error.message);
+            }
         }
     }, []);
 

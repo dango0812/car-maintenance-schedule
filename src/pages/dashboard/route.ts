@@ -1,7 +1,7 @@
 import { type RouteObject } from 'react-router-dom';
 
+import { paths } from '~/shared/constants/paths';
 import { requireAuth } from '~/shared/lib/auth/authGuard';
-import { paths } from '~/shared/routes';
 
 export const dashboardRoute: RouteObject = {
     path: paths.dashboard,

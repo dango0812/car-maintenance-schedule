@@ -1,11 +1,13 @@
 import { createBrowserRouter, Outlet, redirect, RouterProvider } from 'react-router-dom';
 
 import { dashboardRoute } from '~/pages/dashboard/route';
+import { forgotPasswordRoute } from '~/pages/forgot-password/route';
 import { homeRoute } from '~/pages/home/route';
 import { page404Route } from '~/pages/page404/route';
+import { resetPasswordRoute } from '~/pages/reset-password/route';
 import { signInRoute } from '~/pages/sign-in/route';
 import { signUpRoute } from '~/pages/sign-up/route';
-import { paths } from '~/shared/routes';
+import { paths } from '~/shared/constants/paths';
 
 function ErrorBoundary() {
     return <div>Something went wrong</div>;
@@ -19,6 +21,8 @@ const router = createBrowserRouter([
             homeRoute,
             signInRoute,
             signUpRoute,
+            forgotPasswordRoute,
+            resetPasswordRoute,
             dashboardRoute,
             page404Route,
             {

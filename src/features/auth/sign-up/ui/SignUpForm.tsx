@@ -9,8 +9,8 @@ import { type SignUpFormType } from '../model/useSignUp';
 import { sprinkles } from '~/shared/styles/sprinkles.css';
 import { vars } from '~/shared/styles/vars.css';
 
+import { paths } from '~/shared/constants/paths';
 import { confirmPasswordSchema, emailSchema, passwordSchema } from '~/shared/lib/auth/yupSchema';
-import { paths } from '~/shared/routes';
 import { Button } from '~/shared/ui/Button';
 import { FlexBox } from '~/shared/ui/FlexBox';
 import { If } from '~/shared/ui/If';

@@ -7,7 +7,7 @@ import { Typography } from '../Typography';
 
 import * as styles from './logo.css';
 
-import { paths } from '~/shared/routes';
+import { paths } from '~/shared/constants/paths';
 
 interface LogoProps {
     /** 클릭 시 이동 가능 여부 */
