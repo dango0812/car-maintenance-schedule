@@ -22,11 +22,7 @@ export const TabbarActionStyle = recipe({
         cursor: 'pointer',
         transition: 'all 200ms ease-in-out',
         selectors: {
-            '&:hover': {
-                color: vars.colors.blue[700],
-                fontWeight: vars.font.weight.bold,
-            },
-            '&:active': {
+            '&:hover, &:active': {
                 color: vars.colors.blue[700],
                 fontWeight: vars.font.weight.bold,
             },

@@ -53,7 +53,7 @@ export function MainLayout() {
                                     label={label}
                                     icon={<Asset.Icon name={icon} width={24} height={24} />}
                                     isActive={isCurrentTab(path)}
-                                    onClick={() => handleTabClick(path as PathValues)}
+                                    onClick={() => handleTabClick(path)}
                                 />
                             )}
                         </For>
