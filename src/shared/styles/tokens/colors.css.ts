@@ -30,7 +30,7 @@ export const colors = {
         900: 'rgba(0,0,0,0.9)',
     },
     grey: {
-        50: '#f9fafb',
+        50: '#f7f7f7',
         100: '#f2f4f6',
         200: '#e5e8eb',
         300: '#d1d6db',

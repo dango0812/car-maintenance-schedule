@@ -32,6 +32,8 @@ export interface TypographyProps extends TypographySprinkles {
     className?: string;
     /** 스타일 "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "caption" | "title" | "body" */
     variant?: TypographyVariant;
+    /** 인라인 스타일 객체 */
+    style?: React.CSSProperties;
 }
 
 /**
@@ -46,6 +48,7 @@ export interface TypographyProps extends TypographySprinkles {
  * @param fontWeight - 글자 두께
  * @param lineHeight - 줄 간격
  * @param whiteSpace - 공백 처리 방식
+ * @param style - 인라인 스타일 객체
  *
  */
 export const Typography = ({
@@ -58,6 +61,7 @@ export const Typography = ({
     lineHeight,
     whiteSpace,
     variant,
+    style,
     ...rest
 }: TypographyProps) => {
     const baseStyle = variant ? typographySprinkles({ ...variantStyle[variant] }) : '';
@@ -67,6 +71,7 @@ export const Typography = ({
         as,
         {
             className: clsx(baseStyle, overrideStyle, className),
+            style,
             ...rest,
         },
         children,
