@@ -27,15 +27,15 @@ interface TabbarActionProps {
     /** Tab 클릭 비활성화 상태 여부 */
     disabled?: boolean;
     /** 클릭 이벤트 핸들러 */
-    onClick?: (event: React.MouseEvent<HTMLButtonElement & HTMLAnchorElement>) => void;
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 /**
  * Tabbar 개별 아이템 컴포넌트
  * @param className - 추가 스타일 클래스
  * @param icon - 아이콘
- * @param isActive - 이름
- * @param label - 현재 Tab 인지
+ * @param isActive - 현재 Tab 인지
+ * @param label - 이름
  * @param disabled - Tab 클릭 비활성화 상태 여부
  * @param onClick - 클릭 이벤트 핸들러
  */
